@@ -11,6 +11,7 @@ public class ItemHelper extends BaseHelper {
     }
 
     public String getItemName(String number) {
+
         return driver
                 .findElement(By.cssSelector(".brwrvr__item-card:nth-child(" + number + ") .bsig__title__text")).getText();
     }
