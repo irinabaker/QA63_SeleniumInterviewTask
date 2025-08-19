@@ -22,6 +22,7 @@ public class ItemHelper extends BaseHelper {
     }
 
     public String getFirstItemName() {
-        return driver.findElement().getText();
+        return driver.findElement(By.cssSelector(".s-item.s-item__dsa-on-bottom.s-item__pl-on-bottom:nth-child(1) [role='heading']")).getText();
+       // return driver.findElement(By.xpath("//div/ul[@class='srp-results srp-list clearfix']/li[1]//div[2]//span[1]")).getText();
     }
 }

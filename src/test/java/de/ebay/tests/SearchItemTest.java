@@ -12,12 +12,11 @@ public class SearchItemTest extends TestBase {
         app.getSelect().clickOnSection("1");
         app.getSelect().clickOnBrand("Apple");
         String neededItemName = app.getItem().getItemName("2");
-        System.out.println(neededItemName);
+       // System.out.println(neededItemName);
         app.getItem().enterItemToSearchBar(neededItemName);
         String firstItemName = app.getItem().getFirstItemName();
-        System.out.println(firstItemName);
-       // Assert.assertEquals(firstItemName,neededItemName);
-
+       // System.out.println(firstItemName);
+       Assert.assertEquals(firstItemName,neededItemName);
     }
 }
 
