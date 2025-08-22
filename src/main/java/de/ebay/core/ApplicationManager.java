@@ -9,12 +9,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.WebDriverListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 
 public class ApplicationManager {
 
     WebDriver driver;
+    public static Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
 
     SelectHelper select;
     ItemHelper item;

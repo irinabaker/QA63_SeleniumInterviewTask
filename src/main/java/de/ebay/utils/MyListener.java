@@ -58,4 +58,9 @@ public class MyListener implements WebDriverListener {
         logger.info("Elements with locators {} found",locator);
         logger.info("List of element size is {}", result.size());
     }
+
+    @Override
+    public void afterGetText(WebElement element, String result) {
+        logger.info("{}",element.getText());
+    }
 }

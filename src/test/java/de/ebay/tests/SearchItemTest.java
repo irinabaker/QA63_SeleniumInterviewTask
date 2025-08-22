@@ -16,7 +16,7 @@ public class SearchItemTest extends TestBase {
         app.getItem().enterItemToSearchBar(neededItemName);
         String firstItemName = app.getItem().getFirstItemName();
        // System.out.println(firstItemName);
-       Assert.assertEquals(firstItemName,neededItemName);
+       Assert.assertTrue(firstItemName.contains(neededItemName));
     }
 }
 

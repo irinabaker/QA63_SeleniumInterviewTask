@@ -11,9 +11,15 @@ public class ItemHelper extends BaseHelper {
     }
 
     public String getItemName(String number) {
+        //list of unwanted words
+        String unwanted = "NEUES ANGEBOT";
 
-        return driver
-                .findElement(By.cssSelector(".brwrvr__item-card:nth-child(" + number + ") .bsig__title__text")).getText();
+        String rawName = driver.findElement(By.cssSelector(".brwrvr__item-card:nth-child(" + number + ") .bsig__title__text")).getText();
+
+        if (rawName.contains(unwanted)) {
+            rawName = rawName.replace(unwanted,"");
+        }
+        return rawName;
     }
 
     public void enterItemToSearchBar(String itemName) {
@@ -22,7 +28,8 @@ public class ItemHelper extends BaseHelper {
     }
 
     public String getFirstItemName() {
-        return driver.findElement(By.cssSelector(".s-item.s-item__dsa-on-bottom.s-item__pl-on-bottom:nth-child(1) [role='heading']")).getText();
+        return driver.findElement(By.xpath("//ul/li/div/div[2]//span")).getText();
+       // return driver.findElement(By.cssSelector(".s-item.s-item__dsa-on-bottom.s-item__pl-on-bottom:nth-child(1) [role='heading']")).getText();
        // return driver.findElement(By.xpath("//div/ul[@class='srp-results srp-list clearfix']/li[1]//div[2]//span[1]")).getText();
     }
 }
